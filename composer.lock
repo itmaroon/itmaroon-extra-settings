@@ -1,0 +1,96 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "f0f723751ad48af984f4507e4aa14cdc",
+    "packages": [
+        {
+            "name": "itmar/loader-package",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/itmaroon/loader-package.git",
+                "reference": "9b4ff033396e2c96b84b191b6f3e897f57400c2e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/itmaroon/loader-package/zipball/9b4ff033396e2c96b84b191b6f3e897f57400c2e",
+                "reference": "9b4ff033396e2c96b84b191b6f3e897f57400c2e",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Itmar\\Autoloader\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "itmaroon",
+                    "email": "master@itmaroon.net"
+                }
+            ],
+            "description": "This package provides the ability to load classes via Composer's PSR-4 configuration without relying on the autoloader. This is useful when you want to avoid class conflicts between loaders in multiple plugins.",
+            "support": {
+                "issues": "https://github.com/itmaroon/loader-package/issues",
+                "source": "https://github.com/itmaroon/loader-package/tree/v1.1.0"
+            },
+            "time": "2025-05-03T12:36:23+00:00"
+        },
+        {
+            "name": "itmar/wpsetting-class-package",
+            "version": "v1.2.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/itmaroon/wpsetting-class-package.git",
+                "reference": "3aac5b01aff67d7a705ca0294a6b5f0b20d58959"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/itmaroon/wpsetting-class-package/zipball/3aac5b01aff67d7a705ca0294a6b5f0b20d58959",
+                "reference": "3aac5b01aff67d7a705ca0294a6b5f0b20d58959",
+                "shasum": ""
+            },
+            "require": {
+                "itmar/loader-package": "^1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Itmar\\WpsettingClassPackage\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "itmaroon",
+                    "email": "master@itmaroon.net"
+                }
+            ],
+            "description": "This package contains classes that provide a GUI for configuring various settings in WordPress.",
+            "support": {
+                "issues": "https://github.com/itmaroon/wpsetting-class-package/issues",
+                "source": "https://github.com/itmaroon/wpsetting-class-package/tree/v1.2.4"
+            },
+            "time": "2025-05-18T10:59:36+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.6.0"
+}
