@@ -1,4 +1,4 @@
-# EXTRA SETTINGS
+# ITMAROON EXTRA SETTINGS
 
 ## 概要
 WordPressサイトを運用する際には、様々な設定を行う必要があります。WordPressは管理画面でGUIから設定できるツールを提供しているため、簡単に設定できますが、提供されていない設定ツールも少なくありません。このプラグインは、WordPressが提供していない設定項目を集約し、GUIで簡単に設定できる機能を提供します。

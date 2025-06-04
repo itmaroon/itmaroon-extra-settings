@@ -1,9 +1,9 @@
-=== EXTRA SETTINGS ===
+=== ITMAROON EXTRA SETTINGS ===
 Contributors: itmaroon
 Tags: setting, SEO, revision, post name,security
 Requires at least: 6.4
 Tested up to: 6.8
-Stable tag: 0.1.0
+Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Requires PHP: 8.2
@@ -30,7 +30,7 @@ We will set three security settings:
 
 == Related Links ==
 
-* [EXTRA SETTINGS:Github](https://github.com/itmaroon/extra-settings)
+* [ITMAROON EXTRA SETTINGS:Github](https://github.com/itmaroon/itmaroon-extra-settings)
 * [wpsetting-class-package:GitHub](https://github.com/itmaroon/wpsetting-class-package)  
 * [wpsetting-class-package:Packagist](https://packagist.org/packages/itmar/wpsetting-class-package) 
 
@@ -62,7 +62,8 @@ OR…
 6. Security Settings
 
 == Changelog ==
-
+= 1.0.0 =
+First public release
 
 == Upgrade notice ==
 

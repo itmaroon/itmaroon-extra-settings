@@ -2,11 +2,11 @@
 # This file is distributed under the GPL v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: EXTRA SETTINGS 0.1.0\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/extra-"
+"Project-Id-Version: ITMAROON EXTRA SETTINGS 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/itmaroon-extra-"
 "settings\n"
-"POT-Creation-Date: 2025-05-18T13:38:20+02:00\n"
-"PO-Revision-Date: 2025-05-18 20:45+0900\n"
+"POT-Creation-Date: 2025-06-03T07:48:39+02:00\n"
+"PO-Revision-Date: 2025-06-03 14:54+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -14,15 +14,15 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 3.6\n"
-"X-Domain: extra-settings\n"
+"X-Domain: itmaroon-extra-settings\n"
 
 #. Plugin Name of the plugin
-#: extra-settings.php
-msgid "EXTRA SETTINGS"
+#: itmaroon-extra-settings.php
+msgid "ITMAROON EXTRA SETTINGS"
 msgstr ""
 
 #. Description of the plugin
-#: extra-settings.php
+#: itmaroon-extra-settings.php
 msgid ""
 "It provides a function that allows you to configure settings that are not "
 "provided in the WordPress admin screen using a GUI."
@@ -30,39 +30,39 @@ msgstr ""
 "WordPressの管理画面では提供されていない設定をGUIで行える機能を提供します。"
 
 #. Author of the plugin
-#: extra-settings.php
+#: itmaroon-extra-settings.php
 msgid "Web Creator ITmaroon"
 msgstr "Web クリエイター ITmaroon"
 
 #. Author URI of the plugin
-#: extra-settings.php
+#: itmaroon-extra-settings.php
 msgid "https://itmaroon.net"
 msgstr ""
 
-#: extra-settings.php:23
+#: itmaroon-extra-settings.php:23
 msgid "Posts"
 msgstr "投稿"
 
-#: extra-settings.php:72
+#: itmaroon-extra-settings.php:72
 msgid "Unauthorized user"
 msgstr "認証されていないユーザーです。"
 
-#: extra-settings.php:104
+#: itmaroon-extra-settings.php:103
 msgid "Your settings saved"
-msgstr "設定が保存されました。"
+msgstr "設定が保存されました"
 
-#: extra-settings.php:115
+#: itmaroon-extra-settings.php:115
 msgid "General"
 msgstr "全般"
 
-#: extra-settings.php:116
+#: itmaroon-extra-settings.php:116
 msgid "SEO"
 msgstr "SEO"
 
-#: extra-settings.php:117
+#: itmaroon-extra-settings.php:117
 msgid "Security"
 msgstr "セキュリティ"
 
-#: extra-settings.php:120 extra-settings.php:147
+#: itmaroon-extra-settings.php:120 itmaroon-extra-settings.php:147
 msgid "Save Settings"
-msgstr "設定を保存"
+msgstr "設置を保存"

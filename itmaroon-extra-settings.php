@@ -1,15 +1,15 @@
 <?php
 /*
-Plugin Name:  EXTRA SETTINGS
+Plugin Name:  ITMAROON EXTRA SETTINGS
 Description:  It provides a function that allows you to configure settings that are not provided in the WordPress admin screen using a GUI.
 Requires at least: 6.4
 Requires PHP:      8.2
-Version:      0.1.0
+Version:      1.0.0
 Author:       Web Creator ITmaroon
 Author URI:   https://itmaroon.net
 License:      GPL v2 or later
 License URI:  https://www.gnu.org/licenses/gpl-2.0.html
-Text Domain:  extra-settings
+Text Domain:  itmaroon-extra-settings
 Domain Path:  /languages
 */
 
@@ -20,7 +20,7 @@ require_once __DIR__ . '/vendor/itmar/loader-package/src/register_autoloader.php
 // プラグイン有効化時の処理
 register_activation_hook(__FILE__, function () {
 
-    add_option('itmar_post_label', __('Posts', 'extra-settings'));
+    add_option('itmar_post_label', __('Posts', 'itmaroon-extra-settings'));
     add_option('itmar_post_archive_enabled', 0);
     add_option('itmar_post_archive_slug', 'archivepage');
     add_option('itmar_post_supports', ['title', 'editor', 'author', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'post-formats']);
@@ -37,7 +37,7 @@ register_deactivation_hook(__FILE__, function () {
 
 //翻訳ファイルの読み込み
 add_action('init', function () {
-    load_plugin_textdomain('extra-settings', false, basename(dirname(__FILE__)) . '/languages');
+    load_plugin_textdomain('itmaroon-extra-settings', false, basename(dirname(__FILE__)) . '/languages');
 });
 
 //独自CSSとJSをエンキュー
@@ -56,8 +56,8 @@ add_action('admin_menu', 'itmar_extrasetting_menu');
 function itmar_extrasetting_menu()
 {
     add_options_page(
-        'Extra Settings', // ページタイトル
-        'Extra Settings', // メニュータイトル
+        'ITmaroon Extra Settings', // ページタイトル
+        'ITmaroon Extra Settings', // メニュータイトル
         'manage_options', // 必要な権限
         'itmar-extrasetting-settings', // メニューのスラッグ
         'itmar_extrasetting_settings_page' // 表示用の関数
@@ -69,7 +69,7 @@ add_action('admin_post_itmar_save_settings', 'itmar_handle_save_settings');
 function itmar_handle_save_settings()
 {
     if (!current_user_can('manage_options')) {
-        wp_die(esc_html__('Unauthorized user', 'extra-settings'));
+        wp_die(esc_html__('Unauthorized user', 'itmaroon-extra-settings'));
     }
     check_admin_referer('itmar_setting_nonce');
 
@@ -79,8 +79,6 @@ function itmar_handle_save_settings()
     \Itmar\WpSettingClassPackage\ItmarRevisionClass::get_instance()->save_settings();
     \Itmar\WpSettingClassPackage\ItmarSEOSettings::get_instance()->save_settings();
     \Itmar\WpSettingClassPackage\ItmarSecuritySettings::get_instance()->save_settings();
-
-    flush_rewrite_rules();
 
 
     // 正しいリダイレクト先
@@ -97,12 +95,12 @@ function itmar_extrasetting_settings_page()
 {
 ?>
     <div class="wrap">
-        <h1>Extra Settings</h1>
+        <h1>ITMAROON Extra Settings</h1>
         <!-- Notice 表示 -->
         <?php if (isset($_GET['settings-updated']) && $_GET['settings-updated'] === 'true') : ?>
             <div class="notice notice-success is-dismissible">
                 <p><?php
-                    esc_html__('Your settings saved', 'extra-settings');
+                    echo esc_html__('Your settings saved', 'itmaroon-extra-settings');
                     ?></p>
             </div>
         <?php endif; ?>
@@ -114,12 +112,12 @@ function itmar_extrasetting_settings_page()
             <!-- タブナビ -->
             <div class="itmar-settings-tabs">
                 <div class="itmar-settings-tabs__nav">
-                    <button type="button" class="itmar-settings-tabs__nav-button active" data-tab="tab-general"><?php echo esc_html__("General", "extra-settings") ?></button>
-                    <button type="button" class="itmar-settings-tabs__nav-button" data-tab="tab-seo"><?php echo esc_html__("SEO", "extra-settings") ?></button>
-                    <button type="button" class="itmar-settings-tabs__nav-button" data-tab="tab-security"><?php echo esc_html__("Security", "extra-settings") ?></button>
+                    <button type="button" class="itmar-settings-tabs__nav-button active" data-tab="tab-general"><?php echo esc_html__("General", "itmaroon-extra-settings") ?></button>
+                    <button type="button" class="itmar-settings-tabs__nav-button" data-tab="tab-seo"><?php echo esc_html__("SEO", "itmaroon-extra-settings") ?></button>
+                    <button type="button" class="itmar-settings-tabs__nav-button" data-tab="tab-security"><?php echo esc_html__("Security", "itmaroon-extra-settings") ?></button>
                 </div>
                 <div class="itmar-settings-tabs__submit">
-                    <?php submit_button(__("Save Settings", "extra-settings"), 'primary', 'submit', false); ?>
+                    <?php submit_button(__("Save Settings", "itmaroon-extra-settings"), 'primary', 'submit', false); ?>
                 </div>
             </div>
 
@@ -146,7 +144,7 @@ function itmar_extrasetting_settings_page()
 
             <!-- 最後に下部にも念のため -->
             <div style="margin-top:20px;">
-                <?php submit_button(__("Save Settings", "extra-settings")); ?>
+                <?php submit_button(__("Save Settings", "itmaroon-extra-settings")); ?>
             </div>
 
         </form>
