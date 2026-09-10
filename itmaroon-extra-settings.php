@@ -4,7 +4,7 @@ Plugin Name:  ITMAROON EXTRA SETTINGS
 Description:  It provides a function that allows you to configure settings that are not provided in the WordPress admin screen using a GUI.
 Requires at least: 6.4
 Requires PHP:      8.2
-Version:      1.0.0
+Version:      1.1.0
 Author:       Web Creator ITmaroon
 Author URI:   https://itmaroon.net
 License:      GPL v2 or later
@@ -21,16 +21,27 @@ require_once __DIR__ . '/vendor/itmar/loader-package/src/register_autoloader.php
 register_activation_hook(__FILE__, function () {
 
     add_option('itmar_post_label', __('Posts', 'itmaroon-extra-settings'));
-    add_option('itmar_post_archive_enabled', 0);
+    add_option('itmar_post_has_archive', 0);
     add_option('itmar_post_archive_slug', 'archivepage');
-    add_option('itmar_post_supports', ['title', 'editor', 'author', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'post-formats']);
+    // ItmarModifyPost は「サポート名 => 真偽」の連想配列として読む。
+    // リストで保存すると supports が全て失われるため、形を揃えること。
+    add_option('itmar_post_supports', [
+        'title'         => 1,
+        'editor'        => 1,
+        'author'        => 1,
+        'excerpt'       => 1,
+        'custom-fields' => 1,
+        'comments'      => 1,
+        'revisions'     => 1,
+        'thumbnail'     => 1,
+    ]);
 });
 
 // プラグイン無効化時の処理
 register_deactivation_hook(__FILE__, function () {
 
     delete_option('itmar_post_label');
-    delete_option('itmar_post_archive_enabled');
+    delete_option('itmar_post_has_archive');
     delete_option('itmar_post_archive_slug');
     delete_option('itmar_post_supports');
 });
@@ -74,11 +85,11 @@ function itmar_handle_save_settings()
     check_admin_referer('itmar_setting_nonce');
 
     // 設定保存
-    \Itmar\WpSettingClassPackage\ItmarModifyPost::get_instance()->save_settings();
-    //\Itmar\WpSettingClassPackage\ItmarRedirectControl::get_instance()->save_settings();
-    \Itmar\WpSettingClassPackage\ItmarRevisionClass::get_instance()->save_settings();
-    \Itmar\WpSettingClassPackage\ItmarSEOSettings::get_instance()->save_settings();
-    \Itmar\WpSettingClassPackage\ItmarSecuritySettings::get_instance()->save_settings();
+    \Itmar\WpsettingClassPackage\ItmarModifyPost::get_instance()->save_settings();
+    //\Itmar\WpsettingClassPackage\ItmarRedirectControl::get_instance()->save_settings();
+    \Itmar\WpsettingClassPackage\ItmarRevisionClass::get_instance()->save_settings();
+    \Itmar\WpsettingClassPackage\ItmarSEOSettings::get_instance()->save_settings();
+    \Itmar\WpsettingClassPackage\ItmarSecuritySettings::get_instance()->save_settings();
 
 
     // 正しいリダイレクト先
@@ -125,19 +136,19 @@ function itmar_extrasetting_settings_page()
             <div class="itmar-settings-content">
                 <div id="tab-general" class="itmar-settings-content__section active">
                     <?php
-                    \Itmar\WpSettingClassPackage\ItmarRedirectControl::get_instance()->render_settings_section();
-                    \Itmar\WpSettingClassPackage\ItmarModifyPost::get_instance()->render_settings_section();
-                    \Itmar\WpSettingClassPackage\ItmarRevisionClass::get_instance()->render_settings_section();
+                    \Itmar\WpsettingClassPackage\ItmarRedirectControl::get_instance()->render_settings_section();
+                    \Itmar\WpsettingClassPackage\ItmarModifyPost::get_instance()->render_settings_section();
+                    \Itmar\WpsettingClassPackage\ItmarRevisionClass::get_instance()->render_settings_section();
                     ?>
                 </div>
                 <div id="tab-seo" class="itmar-settings-content__section">
                     <?php
-                    \Itmar\WpSettingClassPackage\ItmarSEOSettings::get_instance()->render_settings_section();
+                    \Itmar\WpsettingClassPackage\ItmarSEOSettings::get_instance()->render_settings_section();
                     ?>
                 </div>
                 <div id="tab-security" class="itmar-settings-content__section">
                     <?php
-                    \Itmar\WpSettingClassPackage\ItmarSecuritySettings::get_instance()->render_settings_section();
+                    \Itmar\WpsettingClassPackage\ItmarSecuritySettings::get_instance()->render_settings_section();
                     ?>
                 </div>
             </div>
