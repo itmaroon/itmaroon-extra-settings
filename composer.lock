@@ -45,16 +45,16 @@
         },
         {
             "name": "itmar/wpsetting-class-package",
-            "version": "v1.3.6",
+            "version": "v1.3.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itmaroon/wpsetting-class-package.git",
-                "reference": "776b37d9cb0648fd98d5e89e0d46386e20d423d4"
+                "reference": "dfb48cf914a7578c1d52a7948add55aba2f46b3f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itmaroon/wpsetting-class-package/zipball/776b37d9cb0648fd98d5e89e0d46386e20d423d4",
-                "reference": "776b37d9cb0648fd98d5e89e0d46386e20d423d4",
+                "url": "https://api.github.com/repos/itmaroon/wpsetting-class-package/zipball/dfb48cf914a7578c1d52a7948add55aba2f46b3f",
+                "reference": "dfb48cf914a7578c1d52a7948add55aba2f46b3f",
                 "shasum": ""
             },
             "require": {
@@ -79,9 +79,9 @@
             "description": "This package contains classes that provide a GUI for configuring various settings in WordPress.",
             "support": {
                 "issues": "https://github.com/itmaroon/wpsetting-class-package/issues",
-                "source": "https://github.com/itmaroon/wpsetting-class-package/tree/v1.3.6"
+                "source": "https://github.com/itmaroon/wpsetting-class-package/tree/v1.3.7"
             },
-            "time": "2026-09-10T07:27:51+00:00"
+            "time": "2026-09-18T03:54:55+00:00"
         }
     ],
     "packages-dev": [],
