@@ -4,7 +4,7 @@ Plugin Name:  ITMAROON EXTRA SETTINGS
 Description:  It provides a function that allows you to configure settings that are not provided in the WordPress admin screen using a GUI.
 Requires at least: 6.4
 Requires PHP:      8.2
-Version:      1.1.0
+Version:      1.1.1
 Author:       Web Creator ITmaroon
 Author URI:   https://itmaroon.net
 License:      GPL v2 or later

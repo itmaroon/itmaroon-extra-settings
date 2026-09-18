@@ -3,7 +3,7 @@ Contributors: itmaroon
 Tags: setting, SEO, revision, post name,security
 Requires at least: 6.4
 Tested up to: 7.1
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Requires PHP: 8.2
@@ -75,6 +75,12 @@ Beyond that, the setting is applied only after the plugin confirms that the doma
 6. Security Settings
 
 == Changelog ==
+= 1.1.1 =
+Fixed
+* Redirect Settings: saving with the setting already enabled now checks the domain root index.php and recreates it if missing. Previously, saving without changing the checkbox skipped this check, leaving the site inaccessible when the file was missing.
+* Redirect Settings: existing index.php files are checked for the expected WordPress path. Files that fail validation are left unchanged and an admin notice is shown.
+* Redirect Settings: repairing a missing index.php preserves the Site Address and its saved restoration value. Repair does not depend on an HTTP check that could remove the file after a temporary connection failure.
+
 = 1.1.0 =
 Added
 * Revision Control: added a site-wide default revision count. Until now the number could only be set per post, and there was no way to control it for the whole site.
@@ -102,5 +108,8 @@ Fixed
 First public release
 
 == Upgrade notice ==
+= 1.1.1 =
+Fixes recovery when the domain root index.php is missing. After updating, save Redirect Settings with the checkbox enabled to recreate the missing file.
+
 = 1.1.0 =
 Fixes a bug that removed every feature from the post type on a fresh activation, and closes a hole that let brute-force logins bypass the custom login URL. Updating is recommended.
